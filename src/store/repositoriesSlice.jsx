@@ -2,7 +2,7 @@
  * 
  * /src/store/repositoriesSlice.jsx
  * redux state management
- * This slice manages all repository-related state in the application
+ * This file manages all repository-related state in the application
  * 
  */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
