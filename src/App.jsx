@@ -5,16 +5,27 @@
  * 
  */
 
+import { Provider } from 'react-redux';
+import { store } from './store';
+import SearchBar from './components/SearchBar/SearchBar';
+
 function App() {
+	return (
+		<Provider store={store}>
+			<div className="app">
+				<header className="app-header">
+					<h1>GitHub Repository Browser</h1>
+				</header>
 
-    return (
-        <div>
-            App
-        </div>
-    );
+				<main className="app-main">
+					<div className="search-section">
+						<SearchBar />
+					</div>
+				</main>
+
+			</div>
+		</Provider>
+	);
 }
-
-// Log when App component is being exported
-console.log('📦 App component module loaded and ready for export');
 
 export default App;
