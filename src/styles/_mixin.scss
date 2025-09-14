@@ -1,5 +1,7 @@
+@use "./global";
+
 @mixin focus-ring {
-  outline: 2px solid $primary-color;
+  outline: 2px solid global.$primary-color;
   outline-offset: 2px;
 }
 

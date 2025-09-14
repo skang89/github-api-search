@@ -1,19 +1,22 @@
+@use "../../styles/global";
+@use "../../styles/mixin";
+
 .filter {
 	&-panel {
-		background-color: $background-color;
-		border-radius: $border-radius;
-		padding: $spacing-md;
-		border: 1px solid $border-color;
-		margin-top: $spacing-sm;
+		background-color: global.$background-color;
+		border-radius: global.$border-radius;
+		padding: global.$spacing-md;
+		border: 1px solid global.$border-color;
+		margin-top: global.$spacing-sm;
 	}
 
 	&-row {
 		display: flex;
 		flex-wrap: wrap;
-		gap: $spacing-md;
+		gap: global.$spacing-md;
 		align-items: end;
 
-		@media (max-width: $mobile) {
+		@media (max-width: global.$mobile) {
 			flex-direction: column;
 			align-items: stretch;
 		}
@@ -27,36 +30,36 @@
 
 		label {
 			font-size: 14px;
-			font-weight: $font-weight-medium;
-			color: $text-primary;
-			margin-bottom: $spacing-xs;
+			font-weight: global.$font-weight-medium;
+			color: global.$text-primary;
+			margin-bottom: global.$spacing-xs;
 			cursor: pointer;
 		}
 
 		select {
-			padding: $spacing-xs $spacing-sm;
-			border: 2px solid $border-color;
-			border-radius: $border-radius;
-			background-color: $background-color;
-			color: $text-primary;
-			font-size: $font-size-base;
-			font-family: $font-family;
+			padding: global.$spacing-xs global.$spacing-sm;
+			border: 2px solid global.$border-color;
+			border-radius: global.$border-radius;
+			background-color: global.$background-color;
+			color: global.$text-primary;
+			font-size: global.$font-size-base;
+			font-family: global.$font-family;
 			cursor: pointer;
-			transition: $transition;
+			transition: global.$transition;
 			min-height: 40px;
 			appearance: none;
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-			background-position: right $spacing-xs center;
+			background-position: right global.$spacing-xs center;
 			background-repeat: no-repeat;
 			background-size: 16px;
 			padding-right: 2.5rem;
 
 			&:hover {
-				border-color: $secondary-color;
+				border-color: global.$secondary-color;
 			}
 
 			&:focus {
-				border-color: $primary-color;
+				border-color: global.$primary-color;
 				box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
 				outline: none;
 			}
@@ -64,41 +67,41 @@
 			&:disabled {
 				opacity: 0.6;
 				cursor: not-allowed;
-				background-color: $surface-color;
+				background-color: global.$surface-color;
 			}
 		}
 	}
 
 	&-filters {
-		margin-top: $spacing-md;
-		padding-top: $spacing-md;
-		border-top: 1px solid $border-color;
+		margin-top: global.$spacing-md;
+		padding-top: global.$spacing-md;
+		border-top: 1px solid global.$border-color;
 
 		h4 {
-			margin: 0 0 $spacing-sm 0;
+			margin: 0 0 global.$spacing-sm 0;
 			font-size: 14px;
-			font-weight: $font-weight-medium;
-			color: $text-primary;
+			font-weight: global.$font-weight-medium;
+			color: global.$text-primary;
 		}
 	}
 
 	&-tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: $spacing-xs;
-		margin-bottom: $spacing-sm;
+		gap: global.$spacing-xs;
+		margin-bottom: global.$spacing-sm;
 	}
 
 	&-tag {
 		display: inline-flex;
 		align-items: center;
-		gap: $spacing-xs;
-		padding: $spacing-xs $spacing-sm;
+		gap: global.$spacing-xs;
+		padding: global.$spacing-xs global.$spacing-sm;
 		background-color: rgba(3, 102, 214, 0.1);
-		color: $primary-color;
+		color: global.$primary-color;
 		border-radius: 20px;
 		font-size: 13px;
-		font-weight: $font-weight-medium;
+		font-weight: global.$font-weight-medium;
 		border: 1px solid rgba(3, 102, 214, 0.2);
 
 		.tag-icon {
@@ -118,8 +121,8 @@
 		}
 
 		.remove-tag {
-			@include button-reset;
-			margin-left: $spacing-xs;
+			@include mixin.button-reset;
+			margin-left: global.$spacing-xs;
 			width: 18px;
 			height: 18px;
 			border-radius: 50%;
@@ -129,7 +132,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			transition: $transition;
+			transition: global.$transition;
 
 			&:hover {
 				background-color: rgba(0, 0, 0, 0.2);
@@ -143,39 +146,39 @@
 	}
 
 	&-clear-all {
-		@include button-reset;
-		padding: $spacing-xs $spacing-sm;
+		@include mixin.button-reset;
+		padding: global.$spacing-xs global.$spacing-sm;
 		background-color: transparent;
-		border: 2px solid $border-color;
-		border-radius: $border-radius;
-		color: $text-secondary;
+		border: 2px solid global.$border-color;
+		border-radius: global.$border-radius;
+		color: global.$text-secondary;
 		font-size: 13px;
-		font-weight: $font-weight-medium;
+		font-weight: global.$font-weight-medium;
 		cursor: pointer;
-		transition: $transition;
+		transition: global.$transition;
 		min-height: 32px;
 
 		&:hover {
-			background-color: $surface-color;
-			border-color: $secondary-color;
-			color: $text-primary;
+			background-color: global.$surface-color;
+			border-color: global.$secondary-color;
+			color: global.$text-primary;
 		}
 
 		&:focus {
-			outline: 2px solid $primary-color;
+			outline: 2px solid global.$primary-color;
 			outline-offset: 2px;
 		}
 
 		&:active {
-			background-color: $border-color;
+			background-color: global.$border-color;
 		}
 	}
 }
 
-@media (max-width: $mobile) {
+@media (max-width: global.$mobile) {
 	.filter {
 		&-panel {
-			padding: $spacing-sm;
+			padding: global.$spacing-sm;
 		}
 
 		&-group {

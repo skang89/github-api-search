@@ -1,51 +1,54 @@
+@use "../styles/global";
+
 .search {
 	&-container {
-		margin-bottom: $spacing-xl;
+		margin-bottom: global.$spacing-xl;
 	}
 	&-section {
 		display: flex;
 		flex-direction: column;
-		gap: $spacing-md;
-		padding: $spacing-md;
-		background-color: $surface-color;
-		border-radius: $border-radius;
-		border: 1px solid $border-color;
-		margin-bottom: $spacing-lg;
+		gap: global.$spacing-md;
+		padding: global.$spacing-md;
+		background-color: global.$surface-color;
+		border-radius: global.$border-radius;
+		border: 1px solid global.$border-color;
+		margin-bottom: global.$spacing-lg;
 	}
 
 	&-no-results {
 		text-align: center;
-		padding: $spacing-xl;
-		background-color: $surface-color;
-		border-radius: $border-radius;
-		border: 1px solid $border-color;
+		padding: global.$spacing-xl;
+		background-color: global.$surface-color;
+		border-radius: global.$border-radius;
+		border: 1px solid global.$border-color;
 
 		h3 {
-			margin: 0 0 $spacing-sm 0;
-			color: $text-primary;
-			font-weight: $font-weight-bold;
+			margin: 0 0 global.$spacing-sm 0;
+			color: global.$text-primary;
+			font-weight: global.$font-weight-bold;
 		}
 
 		p {
-			margin: 0 0 $spacing-md 0;
-			color: $text-secondary;
+			margin: 0 0 global.$spacing-md 0;
+			color: global.$text-secondary;
 		}
 	}
 }
 
 .error-message {
-	padding: $spacing-md;
+	padding: global.$spacing-md;
 	background-color: #ffeaea;
 	border: 1px solid #f5c6cb;
-	border-radius: $border-radius;
-	color: $error-color;
-	font-weight: $font-weight-medium;
+	border-radius: global.$border-radius;
+	color: global.$error-color;
+	font-weight: global.$font-weight-medium;
 	text-align: center;
-	margin: $spacing-md 0;
+	margin: global.$spacing-md 0;
 }
 
 .repositories-container {
 	display: flex;
 	flex-direction: column;
-	gap: $spacing-md;
+	gap: global.$spacing-md;
+	padding: 0 global.$spacing-md;
 }
