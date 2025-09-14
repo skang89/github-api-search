@@ -12,21 +12,13 @@ import * as githubAPI from '../services/githubAPI';
 export const searchRepositories = createAsyncThunk(
 	'repositories/search',
 	async ({ query, filters }, { rejectWithValue }) => {
-		console.log('Search parameters:', { query, filters });
 
 		try {
 			const response = await githubAPI.searchRepositories(query, filters);
 
-			console.log('call successful:', {
-				totalCount: response.total_count,
-				itemsReturned: response.items.length,
-			});
-
 			return response;
 
 		} catch (error) {
-			console.error('search call error:', error.message);
-
 			return rejectWithValue({
 				message: error.message,
 				query: query,
@@ -40,19 +32,11 @@ export const fetchRepositoryDetails = createAsyncThunk(
 	'repositories/fetchDetails',
 	async ({ owner, repo }, { rejectWithValue }) => {
 
-		console.log('Repository:', { owner, repo });
-
 		try {
 
 			const details = await githubAPI.getRepositoryDetails(owner, repo);
 
 			const readme = await githubAPI.getRepositoryReadme(owner, repo);
-
-			if (readme) {
-				console.log('We have a README');
-			} else {
-				console.log('No README');
-			}
 
 			// Combine repository details with README content
 			const combinedData = { ...details, readme };
@@ -60,8 +44,6 @@ export const fetchRepositoryDetails = createAsyncThunk(
 			return combinedData;
 
 		} catch (error) {
-			console.error('fetching repository details failed:', error.message);
-
 			// Return a serializable error for Redux
 			return rejectWithValue({
 				message: error.message,

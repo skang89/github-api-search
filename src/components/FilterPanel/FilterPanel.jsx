@@ -31,8 +31,6 @@ const FilterPanel = () => {
 		// Create new filters object with the updated value
 		const newFilters = { ...filters, [key]: value };
 
-		console.log('Updating filters:', newFilters);
-
 		// Update filters in Redux store
 		dispatch(setFilters(newFilters));
 
@@ -51,13 +49,6 @@ const FilterPanel = () => {
 
 		return label;
 	};
-
-	// Log filters state
-	console.log('filters state:', {
-		language: filters.language || 'All Languages',
-		starRange: getCurrentStarRangeLabel(),
-		sortBy: filters.sort,
-	});
 
 	return (
 		<div className="filter-panel">

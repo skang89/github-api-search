@@ -28,8 +28,6 @@ const SearchBar = () => {
     // Validate that we have a search term
     if (inputValue.trim()) {
       const searchTerm = inputValue.trim();
-
-      console.log('search query:', searchTerm);
       
       // Update the search query in Redux store
       dispatch(setSearchQuery(searchTerm));
