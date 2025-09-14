@@ -11,11 +11,10 @@ import { searchRepositories, setSearchQuery } from '../../store/repositoriesSlic
 
 const SearchBar = () => {
 
-  // Redux hooks for state management
   const dispatch = useDispatch();
   
   // Get current search query from Redux store
-  const { searchQuery } = useSelector(state => {
+  const { searchQuery, filters } = useSelector(state => {
     return state.repositories;
   });
 
@@ -36,7 +35,8 @@ const SearchBar = () => {
       dispatch(setSearchQuery(searchTerm));
       
       dispatch(searchRepositories({ 
-        query: searchTerm
+        query: searchTerm,
+        filters
       }));
       
     }

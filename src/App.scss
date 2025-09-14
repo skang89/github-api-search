@@ -1,0 +1,66 @@
+// globals and mixins (custom) imports
+@import "./styles/global.scss";
+@import "./styles/mixin.scss";
+
+*:focus {
+	@include focus-ring;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $font-family;
+	font-size: $font-size-base;
+	line-height: 1.5;
+	color: $text-primary;
+	background-color: $background-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// App styles
+.app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 $spacing-sm;
+
+	@media (min-width: $tablet) {
+		padding: 0 $spacing-md;
+	}
+
+	&-header {
+		padding: $spacing-md 0;
+		border-bottom: 1px solid $border-color;
+		margin-bottom: $spacing-lg;
+
+		h1 {
+			margin: 0;
+			font-size: clamp(1.5rem, 4vw, 2.5rem);
+			font-weight: $font-weight-bold;
+			color: $text-primary;
+			text-align: center;
+			letter-spacing: -0.02em;
+
+			@media (min-width: $mobile) {
+				text-align: left;
+			}
+		}
+	}
+
+	&-main {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-lg;
+	}
+}
+
+// page style imports
+@import './pages/SearchPage.scss';
+
+// component style imports
+@import './components/SearchBar/SearchBar.scss';
+@import './components/FilterPanel/FilterPanel.scss';

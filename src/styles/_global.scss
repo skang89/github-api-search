@@ -1,0 +1,43 @@
+// Variables
+$primary-color: #0366d6;
+$primary-hover: #0256c2;
+$secondary-color: #586069;
+$background-color: #ffffff;
+$surface-color: #f6f8fa;
+$border-color: #e1e4e8;
+$text-primary: #24292e;
+$text-secondary: #586069;
+$text-muted: #6a737d;
+$error-color: #d73a49;
+$success-color: #28a745;
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+$border-radius: 8px;
+$transition: all 0.2s ease-in-out;
+
+// Typography
+$font-family: Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
