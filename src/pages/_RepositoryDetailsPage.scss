@@ -1,0 +1,55 @@
+@use "../styles/global";
+@use "../styles/mixin";
+
+.repository-details-page {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 global.$spacing-sm global.$spacing-xl global.$spacing-sm;
+	animation: fadeInUp 0.4s ease-out;
+
+	@media (min-width: global.$tablet) {
+		padding: 0 global.$spacing-md global.$spacing-xl global.$spacing-md;
+	}
+
+	.back {
+		&-navigation {
+			margin-bottom: global.$spacing-lg;
+			padding: global.$spacing-sm 0;
+		}
+
+		&-button {
+			@include mixin.button-reset;
+			display: inline-flex;
+			align-items: center;
+			gap: global.$spacing-xs;
+			padding: global.$spacing-xs global.$spacing-sm;
+			color: global.$text-secondary;
+			text-decoration: none;
+			font-weight: global.$font-weight-medium;
+			font-size: 14px;
+			border-radius: global.$border-radius;
+			transition: global.$transition;
+			border: 1px solid transparent;
+
+			&:hover {
+				color: global.$primary-color;
+				background-color: rgba(3, 102, 214, 0.1);
+				border-color: rgba(3, 102, 214, 0.2);
+			}
+
+			&:focus {
+				outline: 2px solid global.$primary-color;
+				outline-offset: 2px;
+			}
+
+			&::before {
+				content: '←';
+				transition: global.$transition;
+			}
+
+			&:hover::before {
+				transform: translateX(-2px);
+			}
+		}
+	}
+}

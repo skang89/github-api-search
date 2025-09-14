@@ -1,19 +1,30 @@
 // globals and mixins (custom) imports
-@import "./styles/global.scss";
-@import "./styles/mixin.scss";
+@use "./styles/global";
+@use "./styles/mixin";
+
+// page style imports
+@use './pages/SearchPage.scss';
+@use './pages/RepositoryDetailsPage.scss';
+
+// component style imports
+@use './components/SearchBar/SearchBar.scss';
+@use './components/FilterPanel/FilterPanel.scss';
+@use './components/LoadingSpinner/LoadingSpinner.scss';
+@use './components/RepositoryCard/RepositoryCard.scss';
+@use './components/RepositoryDetails/RepositoryDetails.scss';
 
 *:focus {
-	@include focus-ring;
+	@include mixin.focus-ring;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	font-family: $font-family;
-	font-size: $font-size-base;
+	font-family: global.$font-family;
+	font-size: global.$font-size-base;
 	line-height: 1.5;
-	color: $text-primary;
-	background-color: $background-color;
+	color: global.$text-primary;
+	background-color: global.$background-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -25,26 +36,25 @@ body {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 $spacing-sm;
 
-	@media (min-width: $tablet) {
-		padding: 0 $spacing-md;
+	@media (min-width: global.$tablet) {
+		padding: 0 global.$spacing-md;
 	}
 
 	&-header {
-		padding: $spacing-md 0;
-		border-bottom: 1px solid $border-color;
-		margin-bottom: $spacing-lg;
+		padding: global.$spacing-md 0;
+		border-bottom: 1px solid global.$border-color;
+		margin-bottom: global.$spacing-lg;
 
 		h1 {
 			margin: 0;
 			font-size: clamp(1.5rem, 4vw, 2.5rem);
-			font-weight: $font-weight-bold;
-			color: $text-primary;
+			font-weight: global.$font-weight-bold;
+			color: global.$text-primary;
 			text-align: center;
 			letter-spacing: -0.02em;
 
-			@media (min-width: $mobile) {
+			@media (min-width: global.$mobile) {
 				text-align: left;
 			}
 		}
@@ -54,15 +64,6 @@ body {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		gap: $spacing-lg;
+		gap: global.$spacing-lg;
 	}
 }
-
-// page style imports
-@import './pages/SearchPage.scss';
-
-// component style imports
-@import './components/SearchBar/SearchBar.scss';
-@import './components/FilterPanel/FilterPanel.scss';
-@import './components/LoadingSpinner/LoadingSpinner.scss';
-@import './components/RepositoryCard/RepositoryCard.scss';

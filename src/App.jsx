@@ -8,7 +8,8 @@
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SearchPage from './pages/SearchPage'
+import SearchPage from './pages/SearchPage';
+import RepositoryDetailsPage from './pages/RepositoryDetailsPage';
 import './App.scss'
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
 							<Route
 								path="/"
 								element={<SearchPage />}
+							/>
+							<Route
+								path="/repository/:owner/:repo"
+								element={<RepositoryDetailsPage />}
 							/>
 						</Routes>
 					</main>
