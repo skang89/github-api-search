@@ -1,0 +1,193 @@
+.filter {
+	&-panel {
+		background-color: $background-color;
+		border-radius: $border-radius;
+		padding: $spacing-md;
+		border: 1px solid $border-color;
+		margin-top: $spacing-sm;
+	}
+
+	&-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-md;
+		align-items: end;
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+
+	&-group {
+		display: flex;
+		flex-direction: column;
+		min-width: 200px;
+		flex: 1;
+
+		label {
+			font-size: 14px;
+			font-weight: $font-weight-medium;
+			color: $text-primary;
+			margin-bottom: $spacing-xs;
+			cursor: pointer;
+		}
+
+		select {
+			padding: $spacing-xs $spacing-sm;
+			border: 2px solid $border-color;
+			border-radius: $border-radius;
+			background-color: $background-color;
+			color: $text-primary;
+			font-size: $font-size-base;
+			font-family: $font-family;
+			cursor: pointer;
+			transition: $transition;
+			min-height: 40px;
+			appearance: none;
+			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+			background-position: right $spacing-xs center;
+			background-repeat: no-repeat;
+			background-size: 16px;
+			padding-right: 2.5rem;
+
+			&:hover {
+				border-color: $secondary-color;
+			}
+
+			&:focus {
+				border-color: $primary-color;
+				box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+				outline: none;
+			}
+
+			&:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+				background-color: $surface-color;
+			}
+		}
+	}
+
+	&-filters {
+		margin-top: $spacing-md;
+		padding-top: $spacing-md;
+		border-top: 1px solid $border-color;
+
+		h4 {
+			margin: 0 0 $spacing-sm 0;
+			font-size: 14px;
+			font-weight: $font-weight-medium;
+			color: $text-primary;
+		}
+	}
+
+	&-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-xs;
+		margin-bottom: $spacing-sm;
+	}
+
+	&-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-xs;
+		padding: $spacing-xs $spacing-sm;
+		background-color: rgba(3, 102, 214, 0.1);
+		color: $primary-color;
+		border-radius: 20px;
+		font-size: 13px;
+		font-weight: $font-weight-medium;
+		border: 1px solid rgba(3, 102, 214, 0.2);
+
+		.tag-icon {
+			font-size: 12px;
+		}
+
+		&.language-tag {
+			background-color: rgba(40, 167, 69, 0.1);
+			color: #0a7022;
+			border-color: rgba(40, 167, 69, 0.2);
+		}
+
+		&.star-range-tag {
+			background-color: rgba(255, 193, 7, 0.1);
+			color: #b48700;
+			border-color: rgba(255, 193, 7, 0.2);
+		}
+
+		.remove-tag {
+			@include button-reset;
+			margin-left: $spacing-xs;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: rgba(149, 149, 149, 0.1);
+			color: inherit;
+			font-size: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: $transition;
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+
+			&:focus {
+				outline: 2px solid currentColor;
+				outline-offset: 1px;
+			}
+		}
+	}
+
+	&-clear-all {
+		@include button-reset;
+		padding: $spacing-xs $spacing-sm;
+		background-color: transparent;
+		border: 2px solid $border-color;
+		border-radius: $border-radius;
+		color: $text-secondary;
+		font-size: 13px;
+		font-weight: $font-weight-medium;
+		cursor: pointer;
+		transition: $transition;
+		min-height: 32px;
+
+		&:hover {
+			background-color: $surface-color;
+			border-color: $secondary-color;
+			color: $text-primary;
+		}
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		&:active {
+			background-color: $border-color;
+		}
+	}
+}
+
+@media (max-width: $mobile) {
+	.filter {
+		&-panel {
+			padding: $spacing-sm;
+		}
+
+		&-group {
+			min-width: unset;
+		}
+
+		&-tags {
+			justify-content: center;
+		}
+
+		&-clear-all {
+			width: 100%;
+		}
+	}
+}

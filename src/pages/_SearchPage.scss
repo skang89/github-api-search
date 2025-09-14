@@ -1,0 +1,31 @@
+.search {
+	&-section {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+		padding: $spacing-md;
+		background-color: $surface-color;
+		border-radius: $border-radius;
+		border: 1px solid $border-color;
+		margin-bottom: $spacing-lg;
+	}
+
+	&-no-results {
+		text-align: center;
+		padding: $spacing-xl;
+		background-color: $surface-color;
+		border-radius: $border-radius;
+		border: 1px solid $border-color;
+
+		h3 {
+			margin: 0 0 $spacing-sm 0;
+			color: $text-primary;
+			font-weight: $font-weight-bold;
+		}
+
+		p {
+			margin: 0 0 $spacing-md 0;
+			color: $text-secondary;
+		}
+	}
+}
