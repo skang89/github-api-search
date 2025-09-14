@@ -8,6 +8,7 @@
 import { useSelector } from 'react-redux';
 import SearchBar from '../components/SearchBar/SearchBar';
 import FilterPanel from '../components/FilterPanel/FilterPanel';
+import RepositoryCard from '../components/RepositoryCard/RepositoryCard';
 
 const SearchPage = () => {
 
@@ -24,6 +25,16 @@ const SearchPage = () => {
 			<div className="search-section">
 				<SearchBar />
 				<FilterPanel />
+			</div>
+
+			<div className="repositories-container">
+				{items.map(repo => {
+					return (
+						<RepositoryCard key={repo.id} repository={repo} />
+					);
+				})}
+
+				{items.length > 0 && console.log('✅ All repository cards rendered successfully')}
 			</div>
 
 			{showNoResults && (
