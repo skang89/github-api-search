@@ -1,4 +1,7 @@
 .search {
+	&-container {
+		margin-bottom: $spacing-xl;
+	}
 	&-section {
 		display: flex;
 		flex-direction: column;
@@ -30,8 +33,19 @@
 	}
 }
 
+.error-message {
+	padding: $spacing-md;
+	background-color: #ffeaea;
+	border: 1px solid #f5c6cb;
+	border-radius: $border-radius;
+	color: $error-color;
+	font-weight: $font-weight-medium;
+	text-align: center;
+	margin: $spacing-md 0;
+}
+
 .repositories-container {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-md;
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-md;
 }
