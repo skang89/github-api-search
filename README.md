@@ -28,7 +28,7 @@ Tech Stack Used:
 
 -   SCSS for styling
 
-📦 Installation Instructions
+Installation Instructions
 ----------------------------
 
 ### Prerequisites
@@ -171,7 +171,7 @@ Performance based improvements:
 -   Caching repository data to reduce API calls
 -   Lazy loading repository details
 
-📄 License
+License
 ----------
 
 This project is open source and available under the[  MIT License](https://claude.ai/chat/LICENSE).
