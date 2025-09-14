@@ -8,6 +8,7 @@
 import { useSelector } from 'react-redux';
 import SearchBar from '../components/SearchBar/SearchBar';
 import FilterPanel from '../components/FilterPanel/FilterPanel';
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import RepositoryCard from '../components/RepositoryCard/RepositoryCard';
 
 const SearchPage = () => {
@@ -27,14 +28,24 @@ const SearchPage = () => {
 				<FilterPanel />
 			</div>
 
+			{loading && (
+				<>
+					<LoadingSpinner />
+				</>
+			)}
+
+			{error && (
+				<div className="error-message" role="alert">
+					Error: {error}
+				</div>
+			)}
+
 			<div className="repositories-container">
 				{items.map(repo => {
 					return (
 						<RepositoryCard key={repo.id} repository={repo} />
 					);
 				})}
-
-				{items.length > 0 && console.log('✅ All repository cards rendered successfully')}
 			</div>
 
 			{showNoResults && (

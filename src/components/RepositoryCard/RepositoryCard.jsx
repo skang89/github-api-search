@@ -59,7 +59,7 @@ const RepositoryCard = ({ repository }) => {
         </h3>
 
         <p className="repo-card-owner">
-          by <a
+          by: <a
             href={repository.owner.html_url}
             target="_blank"
             rel="noopener noreferrer"

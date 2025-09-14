@@ -77,10 +77,11 @@
 		font-size: 14px;
 		color: $text-secondary;
 		font-weight: $font-weight-normal;
-
+		
 		a {
 			color: $text-secondary;
-			text-decoration: none;
+			text-decoration: underline;
+			// text-decoration: none;
 			transition: $transition;
 			border-radius: 4px;
 			padding: 2px 4px;
