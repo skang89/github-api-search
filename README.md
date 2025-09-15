@@ -1,11 +1,11 @@
 GitHub Repository Browser
 =========================
 
-I use Vite as my build too to initiate my project with the use of React and Redux Toolkit as my state management for data fetched with the use of Fetch API to fetch Github API data.
+I use Vite as my build tool to initiate my project with the use of React and Redux Toolkit as my state management to store my data. I used Fetch API to fetch Github API data.
 
-Building a simple search funciton with a could of filters (for coding language and star count), as well as the ability to sort results.
+Building a simple search funciton with a a couple of filters (for coding language and star count), as well as the ability to sort results.
 
-This is a SPA, I used React Router to handle the route for the home page and the repo details page.
+This is an SPA, I used React Router to handle the route for the home page and the repo details page.
 
 I used SCSS to style the app
 
@@ -18,15 +18,13 @@ Tech Stack Used:
 
 -   Routing: React Router v6
 
--   Styling: CSS3 with custom components
+-   Styling: Scss with custom components
 
 -   API Integration: GitHub REST API v3 using Fetch API
 
 -   Build Tool: Vite
 
 -   Linting: ESLint with React plugins
-
--   SCSS for styling
 
 Installation Instructions
 ----------------------------
@@ -123,7 +121,7 @@ src/
 
 ├── App.jsx                   # Main application component
 
-├── App.scss                   # Main application component
+├── App.scss                  # Main application component
 
 └── main.jsx                  # Application entry point
 ```
@@ -133,13 +131,13 @@ Struggles & Challenges
 
 ### Technical Challenges
 
--   The deprecation of Create React App and having to look for another build tool to start my App.
+-   The deprecation of Create React App and having to look for another build tool to start off my App.
 
 -   GitHub API Rate Limiting: Encountering rate limit errors when testing the search functionality. This was actually also a good thing because it allowed me to easily build/test the error handling for the app
 
 -   Complex filtering for the star count
 
--   styled-components being in maintenance mode, which suggestions it may become deprecated so styled the app in a different manner. 
+-   styled-components being in maintenance mode, which suggests it may become deprecated so styled the app in a different manner. 
 
 Improvements
 ----------------------
@@ -152,7 +150,7 @@ Adding TypeScript
 
 Add styles with the use of Material UI
 
--   I haven't used Material UI and whilst looked straight forward enough, having worked with other component libraries in the past
+-   Having worked with other component libraries in the past, it would have been nice to implement Material UI, but left like I needed to allow extra time to look through the documentation 
 
 Testing with Jest 
 
@@ -164,10 +162,10 @@ Authentication and various UI and style Improvements
 -   Add features such as:
     -   Display number of results
     -   More search filters
-    -   Page pagination
+    -   Pagination
 
 Performance based improvements:
--   As mentioned above, as pagination
+-   As mentioned above, using pagination
 -   Caching repository data to reduce API calls
 -   Lazy loading repository details
 
